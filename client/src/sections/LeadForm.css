@@ -124,6 +124,11 @@
   color: #c62f2f;
 }
 
+.lead__hint {
+  font-size: 0.78rem;
+  color: var(--c-text-soft);
+}
+
 .lead__hp {
   position: absolute !important;
   left: -9999px;

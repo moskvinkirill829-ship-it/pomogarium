@@ -33,7 +33,6 @@ export default function LeadForm() {
     const e: Record<string, string> = {}
     if (digits.length < 6 || digits.length > 15) e.phone = 'Проверьте номер телефона'
     if (name.trim().length < 2) e.name = 'Как к вам обращаться?'
-    if (contact.trim().length < 2) e.contact = 'Укажите ник для связи'
     setErrors(e)
     return Object.keys(e).length === 0
   }
@@ -82,7 +81,7 @@ export default function LeadForm() {
           <div className="lead__copy">
             <h2 className="lead__title">Запишитесь на первое занятие</h2>
             <p className="lead__text">
-              Это знакомство с преподавателем — поймём, что нужно подтянуть, и подберём формат без спешки.
+              Это знакомство с преподавателем — проведём диагностику знаний и подберём комфортный формат занятий.
             </p>
           </div>
 
@@ -144,9 +143,8 @@ export default function LeadForm() {
                   placeholder="Ник в Telegram / VK / WhatsApp / MAX"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
-                  aria-invalid={!!errors.contact}
                 />
-                {errors.contact && <span className="lead__err">{errors.contact}</span>}
+                <span className="lead__hint">необязательно*</span>
               </label>
 
               {/* honeypot — скрыт от людей, ловит ботов.

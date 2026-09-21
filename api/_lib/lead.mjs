@@ -23,7 +23,8 @@ export function validateLead(body) {
   if (name.length < 2 || name.length > 80) return { error: 'Укажите имя' }
   const digits = phone.replace(/\D/g, '')
   if (digits.length < 6 || digits.length > 15) return { error: 'Проверьте номер телефона' }
-  if (contact.length < 2 || contact.length > 120) return { error: 'Укажите ник для связи' }
+  // ник необязателен - если указан, просто ограничиваем длину
+  if (contact.length > 120) return { error: 'Слишком длинный ник' }
 
   return { lead: { name, phone, contact, page, company, elapsedMs } }
 }
@@ -48,8 +49,8 @@ export async function sendLeadToTelegram(lead, meta = {}) {
     '🆕 Новая заявка — «Помогариум»\n\n' +
     `👤 Имя: ${lead.name}\n` +
     `📞 Телефон: ${lead.phone}\n` +
-    `💬 Ник: ${lead.contact}\n\n` +
-    `🕒 ${at}` +
+    (lead.contact ? `💬 Ник: ${lead.contact}\n` : '') +
+    `\n🕒 ${at}` +
     (lead.page ? `\n🔗 ${lead.page}` : '') +
     (meta.ip ? `\n🌐 ${meta.ip}` : '')
 
