@@ -152,6 +152,10 @@
   margin-bottom: 8px;
 }
 
+.tch-card__attribution {
+  font-size: 0.78rem;
+}
+
 .tch-card__exp {
   font-size: 0.9rem;
   font-weight: 500;

@@ -105,6 +105,8 @@ export type Teacher = {
   photo: string | null
   /** Личная цитата под именем. \n — перенос строки (для двуязычной, как у Алины). */
   quote: string
+  /** Автор цитаты (напр. «Гуго Штейнгауз») — выводится мельче основного текста. */
+  attribution?: string
 }
 
 export const teachers: Teacher[] = [
@@ -163,6 +165,42 @@ export const teachers: Teacher[] = [
     experience: 'преподаёт 4 года',
     photo: '/images/teacher-kristina.jpg',
     quote: '«История помогает понять прошлое. Обществознание — разобраться в настоящем.»',
+  },
+  {
+    name: 'Александра',
+    subject: 'химия',
+    experience: 'преподаёт 7 лет',
+    photo: '/images/teacher-alexandra.jpg',
+    quote: '«ЕГЭ по химии без хауса: понятная система = уверенный результат.»',
+  },
+  {
+    name: 'Арина',
+    subject: 'химия и биология',
+    experience: 'преподаёт 1 год',
+    photo: '/images/teacher-arina.jpg',
+    quote: '«Химия и биология — не про бесконечную зубрёжку. Это про то, как устроена жизнь.»',
+  },
+  {
+    name: 'Надежда',
+    subject: 'математика',
+    experience: 'преподаёт 20+ лет',
+    photo: '/images/teacher-nadezhda-20.jpg',
+    quote: '«Математика становится простой, когда понятно, зачем и как её решать.»',
+  },
+  {
+    name: 'Анна',
+    subject: 'английский, итальянский, арабский',
+    experience: 'преподаёт 5 лет',
+    photo: '/images/teacher-anna-languages.jpg',
+    quote: '«Новый язык — это новая свобода: путешествовать, общаться, учиться и выбирать.»',
+  },
+  {
+    name: 'Надежда',
+    subject: 'математика',
+    experience: 'преподаёт 2 года',
+    photo: '/images/teacher-nadezhda-math.jpg',
+    quote: '«Никакая наука не укрепляет веру в силу человеческого разума так, как математика.»',
+    attribution: 'Гуго Штейнгауз',
   },
   // TODO: добавить остальных преподавателей — просто дописать объекты сюда:
   // { name: 'Имя', subject: 'предмет', experience: 'преподаёт N лет', photo: '/images/teacher-xxx.jpg', quote: '«...»' },

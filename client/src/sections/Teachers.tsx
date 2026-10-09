@@ -55,6 +55,7 @@ export default function Teachers() {
                           {i < arr.length - 1 && <br />}
                         </span>
                       ))}
+                      {t.attribution && <span className="tch-card__attribution"> ({t.attribution})</span>}
                     </p>
                   )}
                   <p className="tch-card__exp">{t.experience}</p>
